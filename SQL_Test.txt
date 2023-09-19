@@ -1,0 +1,12 @@
+// using postgreSQL
+
+RESULT_1
+SELECT DISTINCT item
+FROM ASSET;
+
+
+RESULT_2
+SELECT user_id, STRING_AGG(item, ', ') AS items
+FROM ASSET
+GROUP BY user_id
+ORDER BY user_id;

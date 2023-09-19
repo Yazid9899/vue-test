@@ -1,8 +1,6 @@
-
-
 <script>
 import axios from 'axios';
-
+import '../styles/B_AnswerView.css'
 export default {
   data() {
     return {
@@ -14,6 +12,11 @@ export default {
         email: "",
         phone: "",
         message: "",
+        ptJObApplyType: "APPLICATION",
+        isActive: false,
+        ptJobPost: {
+          id: 1
+        }
       }
     };
   },
@@ -23,7 +26,7 @@ export default {
         const proxyUrl = 'https://cors-proxy.fringe.zone/';
         const url = 'https://bti.id/services/btiportalcorems/api/pt-job-posts/no-auth';
         const response = await axios.get(proxyUrl + url);
-        
+
         if (response.status === 200) {
           this.data = response.data;
         } else {
@@ -38,15 +41,27 @@ export default {
         if (this.data[i].id === id) {
           this.job = this.data[i];
           this.form.subject = this.job.title
-          break; 
+          break;
         }
       }
     },
+
     handleMobileNumberChange(event) {
       event.target.value = event.target.value.replace(/\D/g, '');
     },
-    handleSubmit() {
-      console.log('ASdasdasdas');
+
+    async handleSubmit() {
+      try {
+        const proxyUrl = 'https://cors-proxy.fringe.zone/';
+        const url = "https://bti.id/services/btiportalcorems/api/pt-job-applies/no-auth"
+
+        const response = await axios.post(proxyUrl + url, this.form)
+
+        console.log(response);
+      } catch (error) {
+        console.log(error);
+      }
+
     }
   },
   created() {
@@ -92,7 +107,8 @@ export default {
             </div>
             <div>
               <div class="input-title"><strong>Mobile Number</strong></div>
-              <input v-model="form.phone" @change.prevent="handleMobileNumberChange" type="tel" placeholder="Enter Your Mobile Number" pattern="[0-9]*" class="input" size="50">
+              <input v-model="form.phone" @change.prevent="handleMobileNumberChange" type="tel"
+                placeholder="Enter Your Mobile Number" pattern="[0-9]*" class="input" size="50">
             </div>
           </div>
           <div class="form-row">
@@ -111,85 +127,4 @@ export default {
       </div>
     </div>
   </div>
-
 </template>
-
-<style>
-.main {
-  margin: 3rem;
-}
-
-.bg-content {
-  background-color:beige;
-}
-
-.content {
-  margin: 1rem;
-}
-
-h1 {
-  color: green;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-.job-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.job-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-
-.job-item {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  background-color: #f0f0f0;
-  color: green;
-  padding: 15px;
-  width: 40rem;
-  border-radius: 10px;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.job-title {
-  font-weight: bold;
-}
-
-.job-button {
-  border: 0;
-  border-radius: 5px;
-  background-color: orange;
-  color: white;
-  font-size: 15px;
-  font-weight: 200;
-  margin-top: 0.5rem;
-}
-.form-row {
-  display: flex;
-  gap: 3rem;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-input {
-  border: none;
-  border-bottom: 1px rgb(79, 79, 79) solid;
-  background-color: transparent;
-}
-
-.submit-button {
-  border: 0;
-  border-radius: 5px;
-  background-color: grey;
-  color: white;
-  font-size: 15px;
-  font-weight: 200;
-  margin-top: 0.5rem;
-}
-</style>

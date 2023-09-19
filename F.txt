@@ -1,0 +1,28 @@
+1. Cypress
+
+Cypress adalah tool untuk memudahkan proses testing dan debugging sebuah web application. Cypress bisa melakukan tes seperti end-to-end. setiap test yang di jalankan Cypress di rekam sehingga mempermudah melihat user experience nya.
+
+2. Kubernetes
+
+Kubernetes adalah sebuah platform yang open-source yang digunakan untuk mengatur workloads aplikasi yang dikontainerisasi, sehingga pemasangan, dan pengelolaan aplikasi container dapat dilakukan secara otomatis (orchestrator container).
+
+3. ORM
+
+ORM (Object Relation Mapping) merupakan metode atau teknik merubah suatu relasional table di database menjadi sebuah object sehingga memudahkan kita untuk pengambilan atau penyimpanan data. jadi kita dapat melakukan Query dan memanipulasi data dari database menggunakan OOP (object oriented programing).
+
+4. Class
+
+Class adalah blueprint / template untuk membuat object, jadi suatu class dapat menghasilkan banyak object, class juga dapat mempunyai satu atau lebih properti atau method. Semua object yang di buat dari class yang sama mempunyai properti dan fungsi yang sama tapi Setiap object bisa mempunyai nilai properti yang berbeda-beda dan output method yang berbeda - beda. 
+
+5. Function
+
+function adalah sebuah kode yang dibuat untuk menyelesaikan tugas tertentu yang dimana inputnya sudah di tentukan berbentuk apa dan juga outputnya.
+
+6. DevOp
+
+DevOps adalah pendekatan pengembangan perangkat lunak yang menggabungkan tim pengembangan dan tim operasional dalam kolaborasi yang erat untuk meningkatkan efisiensi dan kualitas perangkat lunak. Ini mengatasi kesenjangan tradisional antara kedua tim.
+
+7. Docker
+
+Docker adalah aplikasi yang dapat membungkus aplikasi yang telah kita buat di dalam container, sehingga aplikasi yang kita telah buat dapat dijalankan di OS yang berbeda, sehingga mempermudah dalam proses development sebuah applikasi.
+
